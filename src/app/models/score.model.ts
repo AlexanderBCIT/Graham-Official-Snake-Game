@@ -1,6 +1,4 @@
 export interface Score {
-}
-export interface Score {
   name: string;
   score: number;
   updatedAt: number;
@@ -22,4 +20,5 @@ export interface GameState {
   tickMs: number;
   alive: boolean;
   paused: boolean;
+  started: boolean;
 }

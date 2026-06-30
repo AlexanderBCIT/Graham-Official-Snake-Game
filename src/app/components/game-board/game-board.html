@@ -3,6 +3,10 @@
           (touchstart)="onTouchStart($event)"
           (touchend)="onTouchEnd($event)"></canvas>
   <div class="scanlines"></div>
+
+  @if (!engine.started() && engine.alive()) {
+    <div class="start-hint pixel">PRESS A DIRECTION<br />TO START</div>
+  }
 </div>
 
 <div class="controls-hint">arrow keys / WASD to move &nbsp;•&nbsp; space to pause</div>

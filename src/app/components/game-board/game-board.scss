@@ -38,6 +38,21 @@ canvas {
   mix-blend-mode: multiply;
 }
 
+.start-hint {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  font-size: 11px;
+  line-height: 1.8;
+  color: var(--snake-head);
+  text-shadow: 0 0 10px rgba(124, 255, 178, 0.45);
+  background: rgba(10, 15, 13, 0.45);
+}
+
 .controls-hint {
   font-size: 9.5px;
   color: var(--muted);

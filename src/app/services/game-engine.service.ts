@@ -18,6 +18,7 @@ export class GameEngineService {
   readonly alive = computed(() => this.state().alive);
   readonly paused = computed(() => this.state().paused);
   readonly tickMs = computed(() => this.state().tickMs);
+  readonly started = computed(() => this.state().started);
 
   private buildInitialState(): GameState {
     return {
@@ -33,6 +34,7 @@ export class GameEngineService {
       tickMs: START_TICK_MS,
       alive: true,
       paused: false,
+      started: false,
     };
   }
 
@@ -50,8 +52,11 @@ export class GameEngineService {
       right: 'left',
     };
     const current = this.state();
-    if (opposite[dir] === current.direction) return;
-    this.state.update((s) => ({ ...s, nextDirection: dir }));
+    const updates: Partial<GameState> = { started: true };
+    if (opposite[dir] !== current.direction) {
+      updates.nextDirection = dir;
+    }
+    this.state.update((s) => ({ ...s, ...updates }));
   }
 
   togglePause(): void {
@@ -62,7 +67,7 @@ export class GameEngineService {
   /** Advances the game by one tick. Returns true if the snake just died this tick. */
   step(): boolean {
     const s = this.state();
-    if (!s.alive || s.paused) return false;
+    if (!s.alive || s.paused || !s.started) return false;
 
     const direction = s.nextDirection;
     const head = { ...s.snake[0] };
