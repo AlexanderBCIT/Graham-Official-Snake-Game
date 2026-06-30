@@ -20,16 +20,10 @@ export class SnakeGame implements OnDestroy {
   private readonly leaderboardService = inject(LeaderboardService);
 
   readonly username = signal(localStorage.getItem(USERNAME_STORAGE_KEY) ?? '');
-  readonly showUsernameDialog = signal(!this.username());
+  readonly showUsernameDialog = signal(true);
   readonly showGameOverDialog = signal(false);
 
   private loopTimer: ReturnType<typeof setTimeout> | null = null;
-
-  constructor() {
-    if (this.username()) {
-      this.runLoop();
-    }
-  }
 
   onUsernameSave(name: string): void {
     this.username.set(name);
