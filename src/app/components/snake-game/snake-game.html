@@ -1,1 +1,39 @@
-<p>snake-game works!</p>
+<div class="app-shell">
+  <header>
+    <h1 class="pixel">BYTE SNAKE</h1>
+    <p>eat the byte, don't bite yourself</p>
+  </header>
+
+  <div class="layout">
+    <div class="game-panel">
+      <div class="hud">
+        <div class="score-block">
+          <span class="label">SCORE</span>
+          <span class="value pixel">{{ engine.score() }}</span>
+        </div>
+        <div class="player-tag" (click)="onPlayerTagClick()" title="Tap to change name">
+          {{ username() ? username().toUpperCase() : 'PLAYER' }}
+        </div>
+      </div>
+
+      <app-game-board></app-game-board>
+    </div>
+
+    <app-leaderboard [currentUsername]="username()"></app-leaderboard>
+  </div>
+
+  <footer>built for the family • scores sync live</footer>
+</div>
+
+<app-username-dialog
+  [visible]="showUsernameDialog()"
+  [initialValue]="username()"
+  (save)="onUsernameSave($event)"
+></app-username-dialog>
+
+<app-game-over-dialog
+  [visible]="showGameOverDialog()"
+  [score]="engine.score()"
+  (playAgain)="onPlayAgain()"
+  (changeName)="onChangeNameClick()"
+></app-game-over-dialog>

@@ -1,1 +1,30 @@
-<p>game-over-dialog works!</p>
+<p-dialog
+  [visible]="visible()"
+  [modal]="true"
+  [closable]="false"
+  [draggable]="false"
+  [resizable]="false"
+  styleClass="gameover-dialog-panel"
+>
+  <ng-template pTemplate="header">
+    <span class="pixel dialog-title">GAME OVER</span>
+  </ng-template>
+
+  <div class="big-score pixel">{{ score() }}</div>
+  <p class="dialog-sub">{{ message() }}</p>
+
+  <ng-template pTemplate="footer">
+    <div class="btn-row">
+      <p-button
+        label="CHANGE NAME"
+        styleClass="secondary-btn"
+        (onClick)="onChangeName()"
+      ></p-button>
+      <p-button
+        label="PLAY AGAIN"
+        styleClass="primary-btn"
+        (onClick)="onPlayAgain()"
+      ></p-button>
+    </div>
+  </ng-template>
+</p-dialog>

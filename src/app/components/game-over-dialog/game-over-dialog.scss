@@ -1,0 +1,75 @@
+:host {
+  ::ng-deep .gameover-dialog-panel {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+    width: min(360px, 90vw);
+
+    .p-dialog-header {
+      background: transparent;
+      padding: 22px 22px 0;
+      justify-content: center;
+    }
+
+    .p-dialog-content {
+      background: transparent;
+      padding: 6px 22px 0;
+      text-align: center;
+    }
+
+    .p-dialog-footer {
+      background: transparent;
+      padding: 0 22px 22px;
+    }
+  }
+}
+
+.dialog-title {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 14px;
+  color: var(--snake-head);
+}
+
+.big-score {
+  font-size: 28px;
+  color: var(--gold);
+  margin: 10px 0;
+}
+
+.dialog-sub {
+  font-size: 11.5px;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+::ng-deep .primary-btn,
+::ng-deep .secondary-btn {
+  flex: 1;
+
+  .p-button {
+    width: 100%;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 11px;
+    padding: 12px 10px;
+    border-radius: 8px;
+  }
+}
+
+::ng-deep .primary-btn .p-button {
+  background: linear-gradient(180deg, var(--snake-head), var(--snake-mid));
+  border: none;
+  color: #04130a;
+}
+
+::ng-deep .secondary-btn .p-button {
+  background: transparent;
+  border: 1px solid var(--panel-border);
+  color: var(--muted);
+}
