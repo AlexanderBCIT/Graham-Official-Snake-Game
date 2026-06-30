@@ -1,1 +1,38 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+:root {
+  --bg: #0a0f0d;
+  --panel: #0f1713;
+  --panel-border: #1c3327;
+  --grid-line: #122019;
+  --snake-head: #7cffb2;
+  --snake-mid: #3ddc84;
+  --snake-tail: #1a7a4c;
+  --food: #ff5277;
+  --food-glow: #ff8fa6;
+  --gold: #ffd166;
+  --text: #d6ffe7;
+  --muted: #6b8f7d;
+  --danger: #ff5277;
+  --radius: 10px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: radial-gradient(ellipse at top, #0f1a14 0%, var(--bg) 60%);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  -webkit-tap-highlight-color: transparent;
+  overscroll-behavior: none;
+}
+
+.pixel {
+  font-family: 'Press Start 2P', monospace;
+}

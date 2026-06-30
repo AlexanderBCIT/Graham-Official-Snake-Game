@@ -21,6 +21,8 @@
     .p-dialog-footer {
       background: transparent;
       padding: 0 22px 22px;
+      display: flex;
+      justify-content: center;
     }
   }
 }
@@ -62,15 +64,12 @@
 }
 
 ::ng-deep .primary-btn {
-  width: 100%;
-
   .p-button {
-    width: 100%;
     background: linear-gradient(180deg, var(--snake-head), var(--snake-mid));
     border: none;
     color: #04130a;
     font-family: 'Press Start 2P', monospace;
     font-size: 11px;
-    padding: 12px 10px;
+    padding: 12px 28px;
   }
 }
