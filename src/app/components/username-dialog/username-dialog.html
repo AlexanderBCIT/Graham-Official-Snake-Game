@@ -1,1 +1,36 @@
-<p>username-dialog works!</p>
+<p-dialog
+  [visible]="visible()"
+  [modal]="true"
+  [closable]="false"
+  [draggable]="false"
+  [resizable]="false"
+  styleClass="username-dialog-panel"
+>
+  <ng-template pTemplate="header">
+    <span class="pixel dialog-title">WHO'S PLAYING?</span>
+  </ng-template>
+
+  <p class="dialog-sub">Pick a name — it'll be remembered on this device.</p>
+
+  <input
+    pInputText
+    [(ngModel)]="usernameValue"
+    (keydown)="onKeydown($event)"
+    maxlength="14"
+    placeholder="e.g. Alex"
+    autocomplete="off"
+    class="username-input"
+  />
+
+  @if (errorMessage) {
+    <small class="err">{{ errorMessage }}</small>
+  }
+
+  <ng-template pTemplate="footer">
+    <p-button
+      label="START PLAYING"
+      styleClass="primary-btn"
+      (onClick)="onSave()"
+    ></p-button>
+  </ng-template>
+</p-dialog>
