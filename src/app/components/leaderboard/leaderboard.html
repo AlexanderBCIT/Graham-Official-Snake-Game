@@ -1,1 +1,17 @@
-<p>leaderboard works!</p>
+<div class="leaderboard-panel">
+  <h2 class="pixel">HIGH SCORES</h2>
+  <div class="lb-status">live • synced across devices</div>
+
+  <ol class="lb-list">
+    @if (scores().length === 0) {
+      <li class="lb-empty">No scores yet — be the first!</li>
+    }
+    @for (row of scores(); track row.name; let i = $index) {
+      <li [class.me]="isCurrentPlayer(row.name)">
+        <span class="rank">#{{ i + 1 }}</span>
+        <span class="name">{{ row.name }}</span>
+        <span class="pts">{{ row.score }}</span>
+      </li>
+    }
+  </ol>
+</div>

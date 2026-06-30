@@ -1,1 +1,16 @@
-<p>game-board works!</p>
+<div #boardWrap class="board-wrap">
+  <canvas #boardCanvas width="400" height="400"
+          (touchstart)="onTouchStart($event)"
+          (touchend)="onTouchEnd($event)"></canvas>
+  <div class="scanlines"></div>
+</div>
+
+<div class="controls-hint">arrow keys / WASD to move &nbsp;•&nbsp; space to pause</div>
+
+<div class="dpad">
+  <button class="up" (click)="onDpad('up')">▲</button>
+  <button class="left" (click)="onDpad('left')">◀</button>
+  <button class="pause" (click)="onPauseClick()">II</button>
+  <button class="right" (click)="onDpad('right')">▶</button>
+  <button class="down" (click)="onDpad('down')">▼</button>
+</div>
