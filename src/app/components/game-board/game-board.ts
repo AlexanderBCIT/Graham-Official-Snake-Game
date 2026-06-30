@@ -80,6 +80,11 @@ export class GameBoard implements AfterViewInit {
     this.engine.setDirection(dir);
   }
 
+  onDpadTouch(dir: Direction, e: TouchEvent): void {
+    e.preventDefault();
+    this.engine.setDirection(dir);
+  }
+
   onPauseClick(): void {
     this.engine.togglePause();
   }

@@ -12,9 +12,9 @@
 <div class="controls-hint">arrow keys / WASD to move &nbsp;•&nbsp; space to pause</div>
 
 <div class="dpad">
-  <button class="up" (click)="onDpad('up')">▲</button>
-  <button class="left" (click)="onDpad('left')">◀</button>
+  <button class="up" (click)="onDpad('up')" (touchstart)="onDpadTouch('up', $event)">▲</button>
+  <button class="left" (click)="onDpad('left')" (touchstart)="onDpadTouch('left', $event)">◀</button>
   <button class="pause" (click)="onPauseClick()">II</button>
-  <button class="right" (click)="onDpad('right')">▶</button>
-  <button class="down" (click)="onDpad('down')">▼</button>
+  <button class="right" (click)="onDpad('right')" (touchstart)="onDpadTouch('right', $event)">▶</button>
+  <button class="down" (click)="onDpad('down')" (touchstart)="onDpadTouch('down', $event)">▼</button>
 </div>
